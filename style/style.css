@@ -1,0 +1,15 @@
+.container {
+    margin-top: 20px;
+}
+
+.page-title {
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: #eee;
+}
