@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 class ForecastList extends Component {
     render() {
         const { weather } = this.props;
-        return weather.map(result => <div>{result.city.name}</div>);
+        return weather.map(result => <div key={result.city.name}>{result.city.name}</div>);
     }
 }
 
@@ -15,3 +16,7 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(ForecastList);
+
+ForecastList.propTypes = {
+    weather: PropTypes.array,
+};
