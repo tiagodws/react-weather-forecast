@@ -1,7 +1,6 @@
-const webpack = require("webpack");
 const path = require("path");
 
-module.exports = env => {
+module.exports = () => {
     const BUILD_FOLDER = "dist";
     const BUNDLE_NAME = "bundle";
 
@@ -25,6 +24,7 @@ module.exports = env => {
             extensions: [".js", ".jsx"],
             modules: [path.join(__dirname, "node_modules")],
         },
+        devtool: "source-map",
         devServer: {
             historyApiFallback: true,
             contentBase: "./",
