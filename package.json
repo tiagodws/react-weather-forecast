@@ -1,10 +1,12 @@
 {
     "name": "react-weather-forecast",
     "version": "1.0.0",
-    "main": "index.js",
     "repository": "git@github.com:tiagodws/react-weather-forecast.git",
     "scripts": {
-        "start": "webpack-dev-server --watch"
+        "start": "webpack-dev-server --watch",
+        "build": "webpack -p",
+        "postinstall": "npm run build",
+        "heroku-prebuild": "npm install --dev"
     },
     "author": "Tiago Dionesto",
     "devDependencies": {
@@ -12,8 +14,11 @@
         "babel-loader": "^6.4.1",
         "babel-preset-env": "^1.6.1",
         "babel-preset-react": "^6.1.18",
+        "css-loader": "^0.28.9",
         "eslint": "^4.17.0",
-        "eslint-plugin-react": "^7.6.1",
+        "express": "^4.16.2",
+        "html-webpack-plugin": "^2.30.1",
+        "style-loader": "^0.20.2",
         "webpack": "^3.10.0",
         "webpack-dev-server": "^2.11.0"
     },

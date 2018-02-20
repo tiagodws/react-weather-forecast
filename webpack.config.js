@@ -1,5 +1,7 @@
 const path = require("path");
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 module.exports = () => {
     const BUILD_FOLDER = "dist";
     const BUNDLE_NAME = "bundle";
@@ -18,13 +20,21 @@ module.exports = () => {
                     exclude: /node_modules/,
                     use: ["babel-loader"],
                 },
+                {
+                    test: /\.css$/,
+                    use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+                },
             ],
         },
         resolve: {
             extensions: [".js", ".jsx"],
             modules: [path.join(__dirname, "node_modules")],
         },
-        devtool: "source-map",
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: "index.html",
+            }),
+        ],
         devServer: {
             historyApiFallback: true,
             contentBase: "./",
