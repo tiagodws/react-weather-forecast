@@ -6,8 +6,7 @@
     "scripts": {
         "start": "webpack-dev-server --watch"
     },
-    "author": "",
-    "license": "ISC",
+    "author": "Tiago Dionesto",
     "devDependencies": {
         "babel-core": "^6.26.0",
         "babel-loader": "^6.4.1",
